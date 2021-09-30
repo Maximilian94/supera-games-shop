@@ -1,13 +1,13 @@
 import React from 'react';
 
-import cart from '../../../images/shopping-cart.png'
+import cart from '../../../images/shopping-cart.png';
 
 import './style.css';
 
 function Cart() {
   return (
     <div className="header-cart-div">
-      <img src={cart} />
+      <img src={cart} alt="cart" />
     </div>
   );
 }
