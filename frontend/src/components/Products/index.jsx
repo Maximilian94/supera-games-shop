@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import jsonProducts from './products.json';
 
@@ -6,8 +6,10 @@ import ProductCard from './ProductCard';
 
 import './style.css';
 
+import { useProducts } from '../../context/ProductContext';
+
 function Products() {
-  const [products, setProducts] = useState([]);
+  const { products, setProducts } = useProducts();
 
   useEffect(() => {
     setProducts(jsonProducts);
