@@ -1,0 +1,14 @@
+.filter-order-products {
+  display: flex;
+  align-items: center;
+}
+
+.filter-order-products > button {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.filter-order-products img {
+  height: 20px;
+}
