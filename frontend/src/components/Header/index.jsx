@@ -2,10 +2,12 @@ import React from 'react';
 
 import './style.css';
 
+import Logo from '../../images/SUPERA-BRANCO.svg';
+
 function Header() {
 
   const logo = () => {
-    return <p>Imagem</p>
+    return <img src={Logo} alt="logo" className="logo" />
   }
 
   const search = () => {
