@@ -19,6 +19,10 @@
 ### Tecnologias
 ##### Front End
 * React
+* React Router Dom
+
+* Jest
+* React Testing Library
 ##### Back End
 
 ### Instação
