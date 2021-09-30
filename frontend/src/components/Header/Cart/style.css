@@ -1,0 +1,9 @@
+.header-cart-div img {
+  height: 50px;
+  filter:  brightness(0) invert(1);
+  cursor: pointer;
+}
+
+.header-cart-div img:hover {
+  filter: none;
+}
