@@ -2,17 +2,13 @@ import React from 'react';
 
 import './style.css';
 
+import Search from './Search';
+
 import Logo from '../../images/SUPERA-BRANCO.svg';
 
 function Header() {
 
-  const logo = () => {
-    return <img src={Logo} alt="logo" className="logo" />
-  }
-
-  const search = () => {
-    return <p>Procurar</p>
-  }
+  const logo = () => (<img src={Logo} alt="logo" className="logo" />)
 
   const cart = () => {
     return <p>Carrinho</p>
@@ -21,7 +17,7 @@ function Header() {
   return (
     <header>
       {logo()}
-      {search()}
+      <Search />
       {cart()}
     </header>
   );
