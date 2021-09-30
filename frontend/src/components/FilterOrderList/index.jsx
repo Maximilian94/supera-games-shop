@@ -16,6 +16,10 @@ function FilterOrderList() {
         <p>Avaliações</p>
         <img src={sort} alt="sort" />
       </button>
+      <button type="button">
+        <p>Alfabética</p>
+        <img src={sort} alt="sort" />
+      </button>
     </div>
   );
 }
