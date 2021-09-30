@@ -7,7 +7,10 @@ import './style.css';
 function Cart() {
   return (
     <div className="header-cart-div">
-      <img src={cart} alt="cart" />
+      <button type="button">
+        <p hidden>Cart</p>
+        <img src={cart} alt="cart" />
+      </button>
     </div>
   );
 }
