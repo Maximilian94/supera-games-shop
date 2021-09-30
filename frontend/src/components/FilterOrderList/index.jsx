@@ -20,18 +20,37 @@ function FilterOrderList() {
     return sortNotSelected;
   };
 
+  const isOrderActive = (type) => {
+    if (currentOrderType.name === type) {
+      return 'active';
+    }
+    return null;
+  };
+
   return (
     <div className="filter-order-products">
       <p>Ordernar por:</p>
-      <button type="button" onClick={() => orderProductsByPrice()}>
+      <button
+        type="button"
+        onClick={() => orderProductsByPrice()}
+        className={isOrderActive('price')}
+      >
         Preço
         <img src={getSortIcon('price')} alt="sort" />
       </button>
-      <button type="button" onClick={() => orderProductsByScore()}>
+      <button
+        type="button"
+        onClick={() => orderProductsByScore()}
+        className={isOrderActive('score')}
+      >
         <p>Avaliações</p>
         <img src={getSortIcon('score')} alt="sort" />
       </button>
-      <button type="button" onClick={() => orderProductsByName()}>
+      <button
+        type="button"
+        onClick={() => orderProductsByName()}
+        className={isOrderActive('name')}
+      >
         <p>Alfabética</p>
         <img src={getSortIcon('name')} alt="sort" />
       </button>
