@@ -7,12 +7,12 @@ function Search() {
   return (
     <div className="div-header-search">
       <input
-        type='text'
+        type="text"
         placeholder="Buscar"
         className="header-search"
       />
       <button type="button">
-        <img src={loupe} />
+        <img src={loupe} alt="search-loupe" />
       </button>
     </div>
   );

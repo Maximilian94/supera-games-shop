@@ -8,9 +8,7 @@ import Cart from './Cart';
 import Logo from '../../images/SUPERA-BRANCO.svg';
 
 function Header() {
-
-  const logo = () => (<img src={Logo} alt="logo" className="logo" />)
-
+  const logo = () => (<img src={Logo} alt="logo" className="logo" />);
 
   return (
     <header>
