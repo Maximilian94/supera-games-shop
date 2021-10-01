@@ -6,9 +6,12 @@ import './style.css';
 import ScoreStarts from '../ScoreStarts';
 import ButtonAddRemove from './ButtonAddRemove';
 
+import { useCart } from '../../context/CartContext';
+
 function ProductDetail(props) {
   const { data } = props;
   const [numberOfProducts, setNumberOfProducts] = useState(0);
+  const { updateCart } = useCart();
 
   if (!data) { return <div>Loading</div>; }
 
@@ -40,7 +43,7 @@ function ProductDetail(props) {
         {timeToReceive()}
         <div>
           <button type="button">Comprar agora</button>
-          <button type="button">Adicionar no carrinho</button>
+          <button type="button" onClick={() => updateCart(data.id, numberOfProducts)}>Adicionar no carrinho</button>
         </div>
       </div>
     </div>

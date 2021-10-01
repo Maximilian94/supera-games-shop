@@ -5,13 +5,15 @@ import './style.css';
 import CheckoutProduct from './CheckoutProduct';
 
 import { useCart } from '../../context/CartContext';
+import { useProducts } from '../../context/ProductContext';
 
 function CheckoutList() {
   const { cart } = useCart();
+  const { getProductById } = useProducts();
 
   return (
     <div>
-      {cart.map((product) => <CheckoutProduct product={product} />)}
+      {cart.map(({ id }) => <CheckoutProduct product={getProductById(id)} />)}
     </div>
   );
 }
