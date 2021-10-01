@@ -2,7 +2,7 @@ import React from 'react';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { Home } from './pages';
+import { Home, Checkout } from './pages';
 
 import { ProductsProvider } from './context/ProductContext';
 
@@ -11,7 +11,10 @@ function App() {
     <ProductsProvider>
       <Router>
         <Switch>
-          <Route>
+          <Route path="/checkout">
+            <Checkout />
+          </Route>
+          <Route path="/">
             <Home />
           </Route>
         </Switch>
