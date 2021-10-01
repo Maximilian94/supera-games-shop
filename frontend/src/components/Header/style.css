@@ -6,6 +6,6 @@ header {
   padding: 10px;
 }
 
-header > img {
+header .logo {
   width: 180px;
 }
