@@ -11,7 +11,7 @@ function Home() {
   return (
     <div>
       <Header />
-      <main>
+      <main className="main-home">
         <FilterRequest />
         <FilterOrderList />
         <Products />

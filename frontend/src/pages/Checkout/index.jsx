@@ -10,7 +10,7 @@ function Checkout() {
   return (
     <div>
       <Header />
-      <main>
+      <main className="main-checkout">
         <CheckoutList />
         <PurchaseSummary />
       </main>
