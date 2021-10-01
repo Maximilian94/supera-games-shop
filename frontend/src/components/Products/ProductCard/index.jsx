@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
+import ScoreStars from '../../ScoreStarts';
+
 function ProductCard(props) {
   const {
     productData: {
@@ -16,7 +18,7 @@ function ProductCard(props) {
       <img src={`/images/Products/${image}`} alt={name} />
       <p>{name}</p>
       <p>{`R$: ${price}`}</p>
-      <p>{score}</p>
+      <ScoreStars score={score} />
     </Link>
   );
 }

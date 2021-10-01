@@ -14,9 +14,9 @@ function ScoreStars(props) {
 
   const star = (isEmpty) => <img src={isEmpty ? starEmpty : starFilled} alt="star" />;
 
-  const stars = () => ([5, 4, 3, 2, 1].map((starNumber) => {
-    const isEmpty = (numberOfStarts - starNumber) > 0;
-    return star(isEmpty);
+  const stars = () => ([1, 2, 3, 4, 5].map((index) => {
+    const isEmpty = (numberOfStarts - index + 1) > 0;
+    return star(!isEmpty);
   }));
 
   return (
