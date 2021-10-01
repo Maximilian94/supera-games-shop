@@ -44,7 +44,7 @@ function ProductDetail(props) {
         {timeToReceive()}
         <div>
           <button type="button">Comprar agora</button>
-          <Link to="/checkout">
+          <Link to="/">
             <button type="button" onClick={() => updateCart(data.id, numberOfProducts)}>Adicionar no carrinho</button>
           </Link>
         </div>
