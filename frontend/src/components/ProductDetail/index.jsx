@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './style.css';
@@ -43,7 +44,9 @@ function ProductDetail(props) {
         {timeToReceive()}
         <div>
           <button type="button">Comprar agora</button>
-          <button type="button" onClick={() => updateCart(data.id, numberOfProducts)}>Adicionar no carrinho</button>
+          <Link to="/checkout">
+            <button type="button" onClick={() => updateCart(data.id, numberOfProducts)}>Adicionar no carrinho</button>
+          </Link>
         </div>
       </div>
     </div>
