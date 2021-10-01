@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import jsonProducts from './products.json';
+// import jsonProducts from './products.json';
 
 import ProductCard from './ProductCard';
 
@@ -9,11 +9,11 @@ import './style.css';
 import { useProducts } from '../../context/ProductContext';
 
 function Products() {
-  const { products, setProducts } = useProducts();
+  const { products } = useProducts();
 
-  useEffect(() => {
-    setProducts(jsonProducts);
-  }, []);
+  // useEffect(() => {
+  //   setProducts(jsonProducts);
+  // }, []);
   return (
     <div className="products-list">
       {products.map((product) => <ProductCard productData={product} key={product.id} />)}

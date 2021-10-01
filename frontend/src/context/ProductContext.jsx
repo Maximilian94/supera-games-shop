@@ -1,5 +1,9 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, {
+  createContext, useContext, useEffect, useState,
+} from 'react';
 import { node } from 'prop-types';
+
+import jsonProducts from '../components/Products/products.json';
 
 export const ProductsContext = createContext();
 
@@ -45,6 +49,8 @@ export function ProductsProvider({ children }) {
     return setProducts([...ordered]);
   };
 
+  const getProductById = (id) => products.find((product) => product.id === parseInt(id, 10));
+
   const context = {
     products,
     setProducts,
@@ -52,7 +58,12 @@ export function ProductsProvider({ children }) {
     orderProductsByScore,
     orderProductsByPrice,
     currentOrderType,
+    getProductById,
   };
+
+  useEffect(() => {
+    setProducts(jsonProducts);
+  }, []);
 
   return (
     <ProductsContext.Provider value={context}>
