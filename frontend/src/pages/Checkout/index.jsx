@@ -2,6 +2,9 @@ import React from 'react';
 
 import Header from '../../components/Header';
 import CheckoutList from '../../components/CheckoutList';
+import PurchaseSummary from '../../components/PurchaseSummary';
+
+import './style.css';
 
 function Checkout() {
   return (
@@ -9,6 +12,7 @@ function Checkout() {
       <Header />
       <main>
         <CheckoutList />
+        <PurchaseSummary />
       </main>
     </div>
   );

@@ -21,6 +21,15 @@ function CheckoutList() {
   return (
     <div>
       <CheckoutProduct product={products} />
+      <CheckoutProduct product={products} />
+      <CheckoutProduct product={products} />
+      <CheckoutProduct product={products} />
+      <CheckoutProduct product={products} />
+      <CheckoutProduct product={products} />
+      <CheckoutProduct product={products} />
+      <CheckoutProduct product={products} />
+      <CheckoutProduct product={products} />
+      <CheckoutProduct product={products} />
     </div>
   );
 }
