@@ -17,6 +17,7 @@ function CheckoutProduct(props) {
     product: {
       name, price, image,
     },
+    quantity,
   } = props;
 
   return (
@@ -34,7 +35,7 @@ function CheckoutProduct(props) {
           <ButtonAnimated staticImage={heart} animatedImage={heartAnimated} name="favorite" />
           <ButtonAnimated staticImage={trash} animatedImage={trashAnimated} name="trash" />
         </div>
-        <ButtonAddRemove />
+        <ButtonAddRemove quantity={quantity} />
       </div>
     </div>
   );
@@ -46,6 +47,7 @@ CheckoutProduct.propTypes = {
     price: PropTypes.number,
     image: PropTypes.string,
   }).isRequired,
+  quantity: PropTypes.number.isRequired,
 };
 
 export default CheckoutProduct;

@@ -13,7 +13,8 @@ function CheckoutList() {
 
   return (
     <div>
-      {cart.map(({ id }) => <CheckoutProduct product={getProductById(id)} />)}
+      {cart.map(({ id, quantity }) => (
+        <CheckoutProduct product={getProductById(id)} quantity={quantity} />))}
     </div>
   );
 }
