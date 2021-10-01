@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState } from 'react';
 import { node } from 'prop-types';
 
+import { useProducts } from './ProductContext';
+
 // const cartTest = [
 //   {
 //     id: 312,
@@ -15,6 +17,7 @@ export const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
+  const { products } = useProducts();
 
   const updateCart = (id, quantity) => {
     console.log(cart);
@@ -33,8 +36,19 @@ export function CartProvider({ children }) {
     setCart(newCart);
   };
 
+  const getTotalPrice = () => {
+    const totalPrice = cart.reduce((acc, cartItem) => {
+      const productData = products.find((product) => product.id === cartItem.id);
+      return acc + (productData.price * cartItem.quantity);
+    }, 0);
+    return totalPrice;
+  };
+
+  const totalPrice = getTotalPrice();
+
   const context = {
     cart,
+    totalPrice,
     setCart,
     updateCart,
     removeProduct,
