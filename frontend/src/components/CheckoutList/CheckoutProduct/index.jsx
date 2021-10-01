@@ -15,7 +15,7 @@ import heartAnimated from '../../../images/heart-animated.gif';
 function CheckoutProduct(props) {
   const {
     product: {
-      name, price, image,
+      name, price, image, id,
     },
     quantity,
   } = props;
@@ -35,7 +35,7 @@ function CheckoutProduct(props) {
           <ButtonAnimated staticImage={heart} animatedImage={heartAnimated} name="favorite" />
           <ButtonAnimated staticImage={trash} animatedImage={trashAnimated} name="trash" />
         </div>
-        <ButtonAddRemove quantity={quantity} />
+        <ButtonAddRemove quantity={quantity} id={id} />
       </div>
     </div>
   );
@@ -46,6 +46,7 @@ CheckoutProduct.propTypes = {
     name: PropTypes.string,
     price: PropTypes.number,
     image: PropTypes.string,
+    id: PropTypes.number,
   }).isRequired,
   quantity: PropTypes.number.isRequired,
 };

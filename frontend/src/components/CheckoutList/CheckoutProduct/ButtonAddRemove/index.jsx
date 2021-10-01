@@ -1,21 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { useCart } from '../../../../context/CartContext';
+
 import './style.css';
 
 function ButtonAddRemove(props) {
-  const { quantity } = props;
+  const { quantity, id } = props;
+  const { updateCart } = useCart();
   return (
     <div className="div-add-remove-product">
-      <button type="button">-</button>
+      <button type="button" onClick={() => updateCart(id, quantity - 1)}>-</button>
       <p>{quantity}</p>
-      <button type="button">+</button>
+      <button type="button" onClick={() => updateCart(id, quantity + 1)}>+</button>
     </div>
   );
 }
 
 ButtonAddRemove.propTypes = {
   quantity: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default ButtonAddRemove;
