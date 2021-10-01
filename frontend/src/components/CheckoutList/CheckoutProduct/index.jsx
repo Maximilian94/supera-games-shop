@@ -12,6 +12,8 @@ import trashAnimated from '../../../images/icons8-trash-can.gif';
 import heart from '../../../images/heart.png';
 import heartAnimated from '../../../images/heart-animated.gif';
 
+import { useCart } from '../../../context/CartContext';
+
 function CheckoutProduct(props) {
   const {
     product: {
@@ -19,6 +21,8 @@ function CheckoutProduct(props) {
     },
     quantity,
   } = props;
+
+  const { removeProduct } = useCart();
 
   return (
     <div className="checkout-product">
@@ -33,7 +37,12 @@ function CheckoutProduct(props) {
       <div>
         <div className="favorite-trash">
           <ButtonAnimated staticImage={heart} animatedImage={heartAnimated} name="favorite" />
-          <ButtonAnimated staticImage={trash} animatedImage={trashAnimated} name="trash" />
+          <ButtonAnimated
+            staticImage={trash}
+            animatedImage={trashAnimated}
+            name="trash"
+            onClick={() => removeProduct(id)}
+          />
         </div>
         <ButtonAddRemove quantity={quantity} id={id} />
       </div>

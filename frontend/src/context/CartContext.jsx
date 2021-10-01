@@ -27,10 +27,17 @@ export function CartProvider({ children }) {
     return setCart(newCart);
   };
 
+  const removeProduct = (id) => {
+    let newCart = [...cart];
+    newCart = newCart.filter((product) => product.id !== id);
+    setCart(newCart);
+  };
+
   const context = {
     cart,
     setCart,
     updateCart,
+    removeProduct,
   };
 
   return (
