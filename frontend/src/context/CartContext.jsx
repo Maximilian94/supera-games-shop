@@ -18,6 +18,7 @@ export const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const { products } = useProducts();
+  const oneShippingPrice = 10;
 
   const updateCart = (id, quantity) => {
     console.log(cart);
@@ -41,14 +42,23 @@ export function CartProvider({ children }) {
       const productData = products.find((product) => product.id === cartItem.id);
       return acc + (productData.price * cartItem.quantity);
     }, 0);
-    return totalPrice;
+    return totalPrice.toFixed(2);
+  };
+
+  const getShippingPrice = () => {
+    const shippingPrice = cart.reduce((acc, cartItem) => (
+      acc + (oneShippingPrice * cartItem.quantity)), 0);
+    if (shippingPrice > 250) { return 0; }
+    return shippingPrice;
   };
 
   const totalPrice = getTotalPrice();
+  const shippingPrice = getShippingPrice().toFixed(2);
 
   const context = {
     cart,
     totalPrice,
+    shippingPrice,
     setCart,
     updateCart,
     removeProduct,
