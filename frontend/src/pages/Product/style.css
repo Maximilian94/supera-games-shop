@@ -1,4 +1,5 @@
 .main-product {
   display: flex;
   justify-content: center;
+  background-color: #EFEFEF;
 }

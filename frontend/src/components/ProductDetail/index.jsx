@@ -32,7 +32,7 @@ function ProductDetail(props) {
 
   return (
     <div className="product-detail">
-      <div>
+      <div className="product-detail-image">
         <img src={`/images/Products/${data.image}`} alt="product" />
       </div>
       <div className="right">
