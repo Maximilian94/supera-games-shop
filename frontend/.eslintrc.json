@@ -2,11 +2,13 @@
     "env": {
         "browser": true,
         "es2021": true,
-        "jest/globals": true
+        "jest/globals": true,
+        "cypress/globals": true
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "plugin:cypress/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -17,9 +19,16 @@
     },
     "plugins": [
         "react",
-        "jest"
+        "jest",
+        "cypress"
     ],
     "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "cypress/no-assigning-return-values": "error",
+        "cypress/no-unnecessary-waiting": "error",
+        "cypress/assertion-before-screenshot": "warn",
+        "cypress/no-force": "warn",
+        "cypress/no-async-tests": "error",
+        "cypress/no-pause": "error"
     }
 }

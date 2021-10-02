@@ -14,10 +14,10 @@ function ProductCard(props) {
   } = props;
 
   return (
-    <Link className="product-card" to={`/product/${id}`}>
+    <Link className="product-card" to={`/product/${id}`} data-cy="product-card">
       <img src={`/images/Products/${image}`} alt={name} />
-      <p>{name}</p>
-      <p>{`R$: ${price}`}</p>
+      <p data-cy="product-card-title">{name}</p>
+      <p data-cy="product-card-price">{`R$: ${price}`}</p>
       <ScoreStars score={score} />
     </Link>
   );
