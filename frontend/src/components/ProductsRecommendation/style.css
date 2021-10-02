@@ -1,0 +1,8 @@
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
+  justify-content: center;
+  align-items: center;
+  width: 20vh;
+}

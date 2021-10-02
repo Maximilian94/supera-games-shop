@@ -21,13 +21,11 @@ export function CartProvider({ children }) {
   const oneShippingPrice = 10;
 
   const updateCart = (id, quantity) => {
-    console.log(cart);
-    if (!quantity) { return console.log('Quantity zero, not added'); }
+    if (!quantity) { return {}; }
     const newCart = [...cart];
     const productFound = newCart.find((product) => product.id === id);
     if (!productFound) { newCart.push({ id, quantity }); }
     if (productFound) { productFound.quantity = quantity; }
-    console.log(newCart);
     return setCart(newCart);
   };
 

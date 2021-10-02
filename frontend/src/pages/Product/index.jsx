@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Header from '../../components/Header';
+import ProductDetail from '../../components/ProductDetail';
+import ProductsRecommendation from '../../components/ProductsRecommendation';
 
 import './style.css';
-import ProductDetail from '../../components/ProductDetail';
 
 import { useProducts } from '../../context/ProductContext';
 
@@ -17,6 +18,7 @@ function Product(props) {
       <Header />
       <main className="main-product">
         <ProductDetail data={product} />
+        <ProductsRecommendation />
       </main>
     </div>
   );
