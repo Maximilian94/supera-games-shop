@@ -4,14 +4,14 @@ import './style.css';
 import { useCart } from '../../context/CartContext';
 
 function PurchaseSummary() {
-  const { totalPrice, shippingPrice } = useCart();
+  const { subTotalPrice, shippingPrice, totalPrice } = useCart();
 
   return (
     <div className="purchase-summary">
       <h2>Resumo do pedido</h2>
       <div className="line">
         <p>Subtotal</p>
-        <p>{`R$ ${totalPrice}`}</p>
+        <p>{`R$ ${subTotalPrice}`}</p>
       </div>
       <div className="line">
         <p>Envio</p>
@@ -19,7 +19,7 @@ function PurchaseSummary() {
       </div>
       <div className="line">
         <p>Total</p>
-        <p>R$ 0,00</p>
+        <p>{`R$ ${totalPrice}`}</p>
       </div>
       <button type="button">
         Comprar

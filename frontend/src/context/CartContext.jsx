@@ -37,12 +37,12 @@ export function CartProvider({ children }) {
     setCart(newCart);
   };
 
-  const getTotalPrice = () => {
-    const totalPrice = cart.reduce((acc, cartItem) => {
+  const getSubTotalPrice = () => {
+    const subTotalPrice = cart.reduce((acc, cartItem) => {
       const productData = products.find((product) => product.id === cartItem.id);
       return acc + (productData.price * cartItem.quantity);
     }, 0);
-    return totalPrice.toFixed(2);
+    return subTotalPrice.toFixed(2);
   };
 
   const getShippingPrice = () => {
@@ -52,13 +52,15 @@ export function CartProvider({ children }) {
     return shippingPrice;
   };
 
-  const totalPrice = getTotalPrice();
+  const subTotalPrice = getSubTotalPrice();
   const shippingPrice = getShippingPrice().toFixed(2);
+  const totalPrice = (parseFloat(subTotalPrice) + parseFloat(shippingPrice)).toFixed(2);
 
   const context = {
     cart,
-    totalPrice,
+    subTotalPrice,
     shippingPrice,
+    totalPrice,
     setCart,
     updateCart,
     removeProduct,
