@@ -11,7 +11,7 @@ function ButtonAddRemove(props) {
   return (
     <div className="div-add-remove-product">
       <button type="button" onClick={() => updateCart(id, quantity - 1)}>-</button>
-      <p>{quantity}</p>
+      <p data-cy="checkout-product-quantity">{quantity}</p>
       <button type="button" onClick={() => updateCart(id, quantity + 1)}>+</button>
     </div>
   );
