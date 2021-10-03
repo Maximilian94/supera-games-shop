@@ -11,3 +11,14 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.shipping-free {
+  text-decoration: line-through;
+}
+
+.shipping-free:after {
+  display: inline-block;
+  content: " - Frete grats!!";
+  text-decoration: dashed;
+  color: red;
+}

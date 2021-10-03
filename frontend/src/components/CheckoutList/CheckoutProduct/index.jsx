@@ -22,7 +22,7 @@ function CheckoutProduct(props) {
     quantity,
   } = props;
 
-  const { removeProduct } = useCart();
+  const { removeProduct, oneShippingPrice, shippingPrice } = useCart();
 
   return (
     <div className="checkout-product">
@@ -32,7 +32,11 @@ function CheckoutProduct(props) {
       <div>
         <p>{name}</p>
         <p>{`R$: ${price}`}</p>
-        <p>Envio: R$ 85,00</p>
+        <p
+          className={(parseInt(shippingPrice, 10) === 0) ? 'shipping-free' : null}
+        >
+          {`Envio: R$ ${(quantity * oneShippingPrice).toFixed(2)}`}
+        </p>
       </div>
       <div>
         <div className="favorite-trash">

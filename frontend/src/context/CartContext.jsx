@@ -59,6 +59,7 @@ export function CartProvider({ children }) {
     subTotalPrice,
     shippingPrice,
     totalPrice,
+    oneShippingPrice,
     setCart,
     updateCart,
     removeProduct,
