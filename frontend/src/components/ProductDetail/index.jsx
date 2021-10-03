@@ -8,11 +8,13 @@ import ScoreStarts from '../ScoreStarts';
 import ButtonAddRemove from './ButtonAddRemove';
 
 import { useCart } from '../../context/CartContext';
+import PopUp from './PopUp';
 
 function ProductDetail(props) {
   const { data } = props;
   const [numberOfProducts, setNumberOfProducts] = useState(0);
   const { updateCart } = useCart();
+  const [popUp, setPopUp] = useState(false);
 
   if (!data) { return <div>Loading</div>; }
 
@@ -44,11 +46,24 @@ function ProductDetail(props) {
         {timeToReceive()}
         <div>
           <Link to="/checkout">
-            <button type="button" onClick={() => updateCart(data.id, numberOfProducts)}>Comprar agora</button>
+            <button
+              type="button"
+              onClick={() => { updateCart(data.id, numberOfProducts); }}
+            >
+              Comprar agora
+            </button>
           </Link>
-          <Link to="/">
-            <button type="button" onClick={() => updateCart(data.id, numberOfProducts)}>Adicionar no carrinho</button>
-          </Link>
+          <button
+            type="button"
+            onClick={() => {
+              updateCart(data.id, numberOfProducts);
+              setPopUp(true);
+            }}
+          >
+            Adicionar no carrinho
+
+          </button>
+          <PopUp isTrue={popUp} setPopUp={setPopUp} />
         </div>
       </div>
     </div>
