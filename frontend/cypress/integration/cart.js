@@ -21,4 +21,8 @@ describe('Testa adição de produto no carrinho', () => {
     cy.findByText('+').click();
     cy.get('[data-cy=checkout-product-quantity]').should('have.text', '2');
   });
+
+  it('Frete grats para compras acima de R$ 250', () => {
+    cy.get('[data-cy=checkout-shipping-price]').should('contain.text', '0.00');
+  });
 });

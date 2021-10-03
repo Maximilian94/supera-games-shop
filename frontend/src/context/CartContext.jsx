@@ -46,7 +46,7 @@ export function CartProvider({ children }) {
   const getShippingPrice = () => {
     const shippingPrice = cart.reduce((acc, cartItem) => (
       acc + (oneShippingPrice * cartItem.quantity)), 0);
-    if (shippingPrice > 250) { return 0; }
+    if (getSubTotalPrice() > 250) { return 0; }
     return shippingPrice;
   };
 

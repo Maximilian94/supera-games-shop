@@ -15,7 +15,7 @@ function PurchaseSummary() {
       </div>
       <div className="line">
         <p>Envio</p>
-        <p>{`R$ ${shippingPrice}`}</p>
+        <p data-cy="checkout-shipping-price">{`R$ ${shippingPrice}`}</p>
       </div>
       <div className="line">
         <p>Total</p>
