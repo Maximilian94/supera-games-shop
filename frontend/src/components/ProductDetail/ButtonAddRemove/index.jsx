@@ -7,8 +7,8 @@ function ButtonAddRemove(props) {
 
   const add = () => number + 1;
   const remove = () => {
-    if (number !== 0) { return number - 1; }
-    return 0;
+    if (number !== 1) { return number - 1; }
+    return 1;
   };
 
   return (

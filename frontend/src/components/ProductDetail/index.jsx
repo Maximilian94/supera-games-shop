@@ -12,7 +12,7 @@ import PopUp from './PopUp';
 
 function ProductDetail(props) {
   const { data } = props;
-  const [numberOfProducts, setNumberOfProducts] = useState(0);
+  const [numberOfProducts, setNumberOfProducts] = useState(1);
   const { updateCart } = useCart();
   const [popUp, setPopUp] = useState(false);
 
