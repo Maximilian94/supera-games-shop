@@ -11,7 +11,8 @@ function ProductsRecommendation() {
   return (
     <div className="recommendations">
       <p>Jogos em alta</p>
-      {recommendedProducts().map((product) => <ProductRecommended product={product} />)}
+      {recommendedProducts()
+        .map((product) => <ProductRecommended product={product} key={product.id} />)}
     </div>
   );
 }
