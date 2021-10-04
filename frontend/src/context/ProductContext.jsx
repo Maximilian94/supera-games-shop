@@ -53,7 +53,7 @@ export function ProductsProvider({ children }) {
   const getProductById = (id) => products.find((product) => product.id === parseInt(id, 10));
 
   const recommendedProducts = () => {
-    let ordered = products.sort((a, b) => b.score - a.score);
+    let ordered = allProducts.sort((a, b) => b.score - a.score);
     const currentPageId = parseInt(window.location.pathname.split('/').at(-1), 10);
     ordered = ordered.filter((product) => product.id !== currentPageId);
     return ordered.slice(0, 3);
