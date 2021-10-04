@@ -14,7 +14,7 @@ function CheckoutList() {
   return (
     <div>
       {cart.map(({ id, quantity }) => (
-        <CheckoutProduct product={getProductById(id)} quantity={quantity} />))}
+        <CheckoutProduct product={getProductById(id)} quantity={quantity} key={id} />))}
     </div>
   );
 }
