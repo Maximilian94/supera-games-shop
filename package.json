@@ -3,6 +3,7 @@
     "cypress": "^8.5.0"
   },
   "scripts": {
-    "start": "npm start --prefix ./frontend"
+    "start": "npm start --prefix ./frontend",
+    "postinstall": "npm install --prefix ./frontend"
   }
 }
