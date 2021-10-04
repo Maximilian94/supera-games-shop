@@ -4,6 +4,11 @@
   },
   "scripts": {
     "start": "npm start --prefix ./frontend",
-    "postinstall": "npm install --prefix ./frontend"
+    "postinstall": "npm install --prefix ./frontend",
+    "heroku-prebuild": "npm i -f",
+    "heroku-postbuild": "npm run build"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.0.7"
   }
 }
