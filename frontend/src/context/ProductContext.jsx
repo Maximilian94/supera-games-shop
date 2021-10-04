@@ -71,6 +71,20 @@ export function ProductsProvider({ children }) {
     return setProducts(productsFiltered);
   };
 
+  const filterProductsBySearch = (string) => {
+    if (string === '' || string === undefined) {
+      return setProducts(allProducts);
+    }
+
+    const productsFiltered = allProducts.filter((product) => {
+      const productName = product.name.toUpperCase();
+      const stringToSearch = string.toUpperCase();
+      return productName.includes(stringToSearch);
+    });
+
+    return setProducts(productsFiltered);
+  };
+
   const context = {
     products,
     allProducts,
@@ -82,6 +96,7 @@ export function ProductsProvider({ children }) {
     getProductById,
     recommendedProducts,
     filterProductsByPrice,
+    filterProductsBySearch,
   };
 
   useEffect(() => {
