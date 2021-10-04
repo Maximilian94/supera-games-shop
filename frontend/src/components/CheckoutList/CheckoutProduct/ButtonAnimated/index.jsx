@@ -15,7 +15,7 @@ function ButtonTrash(props) {
       className="animated-button"
       onMouseEnter={() => { setImage(animatedImage); }}
       onMouseLeave={() => { setImage(staticImage); }}
-      onClick={() => onClick()}
+      onClick={onClick ? (() => onClick()) : null}
     >
       <img src={image} alt={name} />
     </button>
