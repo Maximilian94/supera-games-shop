@@ -6,7 +6,7 @@
         "cypress/globals": true
     },
     "extends": [
-        "airbnb",
+        // "airbnb",
         "plugin:react/recommended",
         "plugin:cypress/recommended"
     ],
