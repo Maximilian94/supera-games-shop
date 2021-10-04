@@ -8,6 +8,7 @@ import jsonProducts from '../components/Products/products.json';
 export const ProductsContext = createContext();
 
 export function ProductsProvider({ children }) {
+  const [allProducts, setAllProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [currentOrderType, setCurrentOrderType] = useState({ name: '', isReverse: false });
 
@@ -58,8 +59,21 @@ export function ProductsProvider({ children }) {
     return ordered.slice(0, 3);
   };
 
+  const filterProductsByPrice = ({ min, max }) => {
+    if (parseInt(min, 10) === 0 && parseInt(max, 10) === 0) { return setProducts(allProducts); }
+    const productsFiltered = allProducts.filter((product) => {
+      if (product.price > min && product.price < max) {
+        return product;
+      }
+      return false;
+    });
+
+    return setProducts(productsFiltered);
+  };
+
   const context = {
     products,
+    allProducts,
     setProducts,
     orderProductsByName,
     orderProductsByScore,
@@ -67,10 +81,12 @@ export function ProductsProvider({ children }) {
     currentOrderType,
     getProductById,
     recommendedProducts,
+    filterProductsByPrice,
   };
 
   useEffect(() => {
     setProducts(jsonProducts);
+    setAllProducts(jsonProducts);
   }, []);
 
   return (
