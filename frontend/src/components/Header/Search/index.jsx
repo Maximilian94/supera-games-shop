@@ -22,8 +22,9 @@ function Search() {
             filterProductsBySearch(nameSearch);
           }
         }}
+        data-cy='search-product-input'
       />
-      <button type="button" onClick={() => filterProductsBySearch(nameSearch)}>
+      <button type="button" onClick={() => filterProductsBySearch(nameSearch)} data-cy='search-product'>
         <img src={loupe} alt="search-loupe" />
       </button>
     </div>

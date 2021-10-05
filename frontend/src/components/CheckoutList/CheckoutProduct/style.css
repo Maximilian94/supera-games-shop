@@ -18,7 +18,7 @@
 
 .shipping-free:after {
   display: inline-block;
-  content: " - Frete grats!!";
+  content: " - Frete grátis!!";
   text-decoration: dashed;
   color: red;
 }

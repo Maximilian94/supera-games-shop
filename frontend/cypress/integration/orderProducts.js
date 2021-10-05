@@ -33,4 +33,42 @@ describe('Testes de ordenação de produtos', () => {
     cy.get('[data-cy=product-card-title]').first().should('have.text', 'The Witcher III Wild Hunt');
     cy.get('[data-cy=product-card-price]').first().should('include.text', '119.50');
   });
+
+  it('Ordenação de produtos por com inputs zerados', () => {
+    cy.visit('http://localhost:3000/');
+    cy.get('[data-cy=min-price-range]').type('0');
+    cy.get('[data-cy=max-price-range]').type('0');
+    cy.get('[data-cy=filter-price-range]').click();
+    cy.get('[data-cy=product-card-title]').its('length').should('eq', 9)
+  });
+
+  it('Ordenação de produtos com preço minimo maior que o maximo', () => {
+    cy.visit('http://localhost:3000/');
+    cy.get('[data-cy=min-price-range]').type('50');
+    cy.get('[data-cy=max-price-range]').type('0');
+    cy.get('[data-cy=filter-price-range]').click();
+    cy.get('[data-cy=product-card-title]').should('not.exist')
+  });
+
+  it('Testa ordenação de produtos por preço', () => {
+    cy.visit('http://localhost:3000/');
+    cy.get('[data-cy=min-price-range]').type('50');
+    cy.get('[data-cy=max-price-range]').type('100');
+    cy.get('[data-cy=filter-price-range]').click();
+    cy.get('[data-cy=product-card-title]').its('length').should('eq', 3)
+  });
+
+  it('Buscar produtos pelo nome', () => {
+    cy.visit('http://localhost:3000/');
+    cy.get('[data-cy=search-product-input]').type('fifa');
+    cy.get('[data-cy=search-product]').click();
+    cy.get('[data-cy=product-card-title]').its('length').should('eq', 1);
+    cy.get('[data-cy=product-card-title]').first().should('include.text', 'FIFA');
+  });
+
+  it('Recebe todos os produtos se a buscar por nome for vazia', () => {
+    cy.get('[data-cy=search-product-input]').clear();
+    cy.get('[data-cy=search-product]').click();
+    cy.get('[data-cy=product-card-title]').its('length').should('eq', 9);
+  });
 });

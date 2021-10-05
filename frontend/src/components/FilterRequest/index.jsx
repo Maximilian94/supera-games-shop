@@ -18,6 +18,7 @@ function FilterRequest() {
         onChange={(e) => setMinPrice(e.target.value)}
         onFocus={() => setMinPrice('')}
         onBlur={() => setMinPrice(minPrice || 0)}
+        data-cy='min-price-range'
       />
       <p>-</p>
       <input
@@ -27,8 +28,13 @@ function FilterRequest() {
         onChange={(e) => setMaxPrice(e.target.value)}
         onFocus={() => setMaxPrice('')}
         onBlur={() => setMaxPrice(maxPrice || 0)}
+        data-cy='max-price-range'
       />
-      <button type="button" onClick={() => filterProductsByPrice({ min: minPrice, max: maxPrice })}>
+      <button
+        type="button"
+        onClick={() => filterProductsByPrice({ min: minPrice, max: maxPrice })}
+        data-cy='filter-price-range'
+      >
         Filtrar
       </button>
     </div>
