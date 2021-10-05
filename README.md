@@ -20,11 +20,19 @@
 ##### Front End
 * React
 * React Router Dom
-
-* Jest
-* React Testing Library
+* Eslint
+* Cypress
 ##### Back End
 
 ### Instação
+Faça a instalação dos pacotes dentro da pasta frontend.
+    • CD frontend/
+    • npm install
 ### Uso
+Dentro da pasta frontend, inicie a aplicação react.
+    • cd frontend/
+    • npm start
 ### Teste
+Dentro da pasta frontend, execute o comando a seguinte, e escolha os testes end-to-end que você quer fazer com cypress.
+    • cd frontend/
+    • npm run cy:open
